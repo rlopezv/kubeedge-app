@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: kubeedge-app-daemonset
+spec:
+  selector:
+      matchLabels:
+        name: kubeedge-app-daemonset
+  template:
+    metadata:
+      labels:
+        name: kubeedge-app-daemonset 
+    spec:
+      containers:
+       - name: kubeedge-daemon
+         image: rlopezv/kubeedge-demo-app
