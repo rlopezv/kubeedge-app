@@ -22,7 +22,7 @@ spec:
                   operator: DoesNotExist    
       containers:
       - name: kubedge-app
-        image: rlopezv/kubeedge-nginx-app-amd64
+        image: rlopezv/kubeedge-nginx-app-arm64
         imagePullPolicy: Always
         resources:
           requests:
