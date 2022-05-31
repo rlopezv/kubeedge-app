@@ -17,9 +17,9 @@ spec:
             nodeSelectorTerms:
               - matchExpressions:
                 - key: node-role.kubernetes.io/edge
-                  operator: DoesNotExist
+                  operator: Exists
                 - key: node-role.kubernetes.io/agent
-                  operator: DoesNotExist    
+                  operator: Exists    
       containers:
       - name: kubedge-app
         image: rlopezv/kubeedge-nginx-app-arm64
@@ -62,6 +62,6 @@ spec:
       targetPort: nginx-pod-port
       protocol: TCP
       name: http
-      nodePort: 30007
+      nodePort: 30017
   selector:
     app: kubeedge-app-daemonset

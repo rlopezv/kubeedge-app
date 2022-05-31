@@ -2,16 +2,18 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: kubeedge-app
-  namespace: kubeedge-app
 spec:
   destination:
     namespace: kubeedge-app
     server: https://kubernetes.default.svc
-  project: kubedge-project
+  project: kubeedge
   source:
-    path: manifests-kubeedge
-    repoURL: https://gitlab.com/ramon.lopez.viana/kubeedge-demo-infra.git
-    targetRevision: main
+    # path: manifests-kubeedge
+    # repoURL: https://gitlab.com/ramon.lopez.viana/kubeedge-demo-infra.git
+    # targetRevision: main
+    path: nginx-infra/manifests-kubeedge
+    repoURL: https://github.com/rlopezv/kubeedge-app.git
+    targetRevision: HEAD
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
